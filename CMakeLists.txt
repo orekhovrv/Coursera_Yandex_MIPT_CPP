@@ -1,0 +1,42 @@
+cmake_minimum_required(VERSION 3.28)
+project(Coursera_Yandex)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(Coursera_Yandex
+        "2_Yellow/Week 6/date.cpp"
+        "2_Yellow/Week 6/date.h"
+        "2_Yellow/Week 6/main.cpp"
+        "2_Yellow/Week 6/condition_parser.cpp"
+        "2_Yellow/Week 6/condition_parser_test.cpp"
+        "2_Yellow/Week 6/database.cpp"
+        "2_Yellow/Week 6/node.cpp"
+        "2_Yellow/Week 6/token.cpp"
+        "2_Yellow/Week 6/event.cpp"
+        "2_Yellow/Week 6/event.h"
+        "2_Yellow/Week 6/test_runner.cpp"
+        "3_Red/Week 1/comparator_generator.cpp"
+        "3_Red/Week 1/sort_by.cpp"
+        "3_Red/Week 1/test_runner.h"
+        "3_Red/Week 1/update_field.cpp"
+        "3_Red/Week 1/print_values.cpp"
+        "3_Red/Week 1/uniq_id.cpp"
+        "3_Red/Week 1/dequeue.cpp"
+        "3_Red/Week 1/dequeue.cpp"
+        "3_Red/Week 1/paginator.cpp"
+        "3_Red/Week 2/sort_students.cpp"
+        "3_Red/Week 2/profile.h"
+        "3_Red/Week 2/learner.cpp"
+        "3_Red/Week 2/slow_1.cpp"
+        "3_Red/Week 2/slow_2.cpp"
+        "3_Red/Week 2/booking.cpp"
+        "3_Red/Week 3/object_pool.cpp"
+        "3_Red/Week 3/simple_vector.h"
+        "3_Red/Week 3/simple_vector.cpp"
+        "3_Red/Week 3/linked_list.cpp"
+        "3_Red/Week 4/airport_counter.cpp"
+        "3_Red/Week 4/airport_counter_example.cpp"
+        "3_Red/Week 4/text_editor.cpp"
+        "3_Red/Week 4/server_stats.cpp"
+        "3_Red/Week 4/stats.cpp"
+)

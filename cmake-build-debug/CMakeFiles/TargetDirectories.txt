@@ -1,0 +1,3 @@
+C:/Users/Kuzai/CLionProjects/Coursera_Yandex/cmake-build-debug/CMakeFiles/Coursera_Yandex.dir
+C:/Users/Kuzai/CLionProjects/Coursera_Yandex/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Kuzai/CLionProjects/Coursera_Yandex/cmake-build-debug/CMakeFiles/rebuild_cache.dir
