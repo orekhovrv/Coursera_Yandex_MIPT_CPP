@@ -71,29 +71,33 @@ ostream& operator<<(ostream& stream, const Date& date) {
 
 istream& operator>>(istream& stream, Date& date) {
     string input_date;
-    getline(stream, input_date);
+    stream.ignore();
+    getline(stream, input_date, ' ');
+    if(input_date.empty()) {
+        return stream;
+    }
     stringstream input_date_stream(input_date);
 
     char delimiter;
 
     input_date_stream >> date.year;
 
-    stream >> delimiter;
+    input_date_stream >> delimiter;
     if (delimiter != '-') {
         throw logic_error("Wrong date format: " + input_date);
     }
 
-    stream >> date.month;
+    input_date_stream >> date.month;
     if (date.month < 1 || date.month > 12) {
         throw logic_error("Month value is invalid: " + to_string(date.month));
     }
 
-    stream >> delimiter;
+    input_date_stream >> delimiter;
     if (delimiter != '-') {
         throw logic_error("Wrong date format: " + input_date);
     }
 
-    stream >> date.day;
+    input_date_stream >> date.day;
     if (date.day < 1 || date.month > 31) {
         throw logic_error("Day value is invalid: " + to_string(date.day));
     }
@@ -111,15 +115,18 @@ public:
         if (events.count(date) && events[date].count(event)) {
             events[date].erase(event);
             cout << "Deleted successfully" << endl;
+        } else {
+            cout << "Event not found" << endl;
         }
     }
 
     void  deleteDate(const Date& date) {
+        size_t events_count = 0;
         if (events.count(date)) {
-            size_t events_count = events[date].size();
+            events_count = events[date].size();
             events.erase(date);
-            cout << "Deleted " << events_count << " events" << endl;
         }
+        cout << "Deleted " << events_count << " events" << endl;
     }
 
     void find(const Date& date) const {
@@ -146,6 +153,10 @@ int main() {
 
     string command_line;
     while (getline(cin, command_line)) {
+        if (command_line.empty()) {
+            continue;
+        }
+
         stringstream command_line_stream(command_line);
         string command;
         Date date{};
