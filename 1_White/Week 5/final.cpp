@@ -23,8 +23,8 @@ bool operator <(const Date& value_1, const Date& value_2) {
 
 ostream& operator <<(ostream& stream, const Date& value) {
     stream << setw(4) << setfill('0') << value.year <<
-           DELIMITER << setw(2) << setfill('0') << value.month <<
-           DELIMITER << setw(2) << setfill('0') << value.day;
+           delimiter << setw(2) << setfill('0') << value.month <<
+           delimiter << setw(2) << setfill('0') << value.day;
     return stream;
 }
 
@@ -46,13 +46,13 @@ istream& operator >>(istream& stream, Date& value) {
     bool is_parsed = bool(stream >> value.year);
 
     char delimiter_1 = char(stream.peek());
-    is_parsed = is_parsed && delimiter_1 == DELIMITER;
+    is_parsed = is_parsed && delimiter_1 == delimiter;
     stream.ignore(1);
 
     is_parsed = is_parsed && stream >> value.month;
 
     char delimiter_2 = char(stream.peek());
-    is_parsed = is_parsed && delimiter_2 == DELIMITER;
+    is_parsed = is_parsed && delimiter_2 == delimiter;
     stream.ignore(1);
 
     is_parsed = is_parsed && stream >> value.day;
