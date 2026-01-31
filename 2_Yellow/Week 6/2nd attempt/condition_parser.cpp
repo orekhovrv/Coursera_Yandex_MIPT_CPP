@@ -1,6 +1,10 @@
 #include "condition_parser.h"
 #include "token.h"
 #include "date.h"
+#include "date.cpp"
+#include "node.cpp"
+#include "event.cpp"
+
 
 #include <map>
 
@@ -56,7 +60,7 @@ template <class It> shared_ptr<Node> ParseComparison(It& current, It end) {
     istringstream is(value);
     return make_shared<DateComparisonNode>(cmp, ParseDate(is));
   } else {
-    return make_shared<EventComparisonNode>(cmp, Event{value});
+      return make_shared<EventComparisonNode>(cmp, Event{value});
   }
 }
 
